@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body{
+            display: flex;
+            justify-content: center;
+           align-items: center;
+            background-color: wheat;
+            height: 100vh;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            
+        }
+        .box{
+             background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 10px black;
+            text-align: center;
+            width: 250px;
+            border-radius: 8px;
+
+        }
+        input,button{
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+         button{
+            background-color: brown;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+         }
+         #result{
+            font-weight:bold;
+            margin-top: 10px;
+         }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h3>Age calculator</h3>
+        <input type="number" id="Birthyear" placeholder="Birthday year">
+        <button onclick="checkage()">age batain</button>
+<div id="result"></div>
+    </div>
+<script>
+    function checkage(){
+    let currentyear =2026;
+    let Birthyear = parseInt(document.getElementById("Birthyear").value);
+    let resultdiv=document.getElementById("result");
+    if(isNaN(Birthyear)||Birthyear>currentyear||Birthyear < 1900){
+        resultdiv.innerText="sahi saal likhen";
+        resultdiv.style.color="red";
+    }else{
+        let age = currentyear - Birthyear;    
+    if(age >= 18){
+        resultdiv.innerText="aap ki umar:"+ age +"saal(adult)";
+        resultdiv.style.color="green";
+    }else{
+        resultdiv.innerText = "aap ki umar" + age + "saal(under18)";
+        resultdiv.style.color = "orange";
+    
+    }
+    }
+}
+    
+</script>
+</body>
+</html>
